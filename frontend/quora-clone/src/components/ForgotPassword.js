@@ -22,7 +22,7 @@ const ForgotPassword = () => {
     setMessage('');
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/auth/request-reset/', {
+      const response = await axios.post('https://quora-clone-backend-one.vercel.app/auth/request-reset/', {
         email,
       });
       if (response.status === 200) {

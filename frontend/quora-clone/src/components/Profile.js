@@ -16,7 +16,7 @@ const Profile = () => {
       }
 
       try {
-        const response = await axios.get('http://127.0.0.1:8000/auth/profile', {
+        const response = await axios.get('https://quora-clone-backend-one.vercel.app/auth/profile', {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log(response.data);

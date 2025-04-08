@@ -21,7 +21,7 @@ const Login = () => {
     setError(''); // Clear previous error
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/auth/login', {
+      const response = await axios.post('https://quora-clone-backend-one.vercel.app/auth/login', {
         email,
         password,
       });

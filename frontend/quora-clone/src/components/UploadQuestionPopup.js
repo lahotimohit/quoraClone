@@ -20,7 +20,7 @@ const UploadQuestionPopup = ({ isOpen, onClose, token }) => {
 
     try {
       await axios.post(
-        'http://127.0.0.1:8000/posts/questions/',
+        'https://quora-clone-backend-one.vercel.app/posts/questions/',
         { title, body: body },
         { headers: { Authorization: `Bearer ${token}` } }
       );

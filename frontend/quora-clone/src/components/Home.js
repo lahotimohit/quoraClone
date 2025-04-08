@@ -13,7 +13,7 @@ const Home = () => {
 
   const fetchQuestions = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/posts/questions/');
+      const response = await axios.get('https://quora-clone-backend-one.vercel.app/posts/questions/');
       setQuestions(response.data);
     } catch (error) {
       console.error('Error fetching questions:', error);

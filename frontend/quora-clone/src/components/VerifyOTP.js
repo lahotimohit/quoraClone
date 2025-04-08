@@ -47,7 +47,7 @@ const VerifyOTP = () => {
     }
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/auth/verify-otp', {
+      const response = await axios.post('https://quora-clone-backend-one.vercel.app/auth/verify-otp', {
         email: storedEmail,
         otp: otpString,
       });

@@ -28,7 +28,7 @@ const ResetPassword = () => {
     setMessage('');
 
     try {
-      const response = await axios.put(`http://127.0.0.1:8000/auth/reset-password/${uidb64}/${token}/`, {
+      const response = await axios.put(`https://quora-clone-backend-one.vercel.app/auth/reset-password/${uidb64}/${token}/`, {
         new_password: newPassword,
         confirm_password: confirmPassword,
       });

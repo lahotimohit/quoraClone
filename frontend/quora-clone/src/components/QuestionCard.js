@@ -16,7 +16,7 @@ const QuestionCard = ({ question, isLoggedIn }) => {
     try {
       const authHeader = token ? `Bearer ${token.trim()}` : '';
       console.log('Fetch Answers Authorization Header:', authHeader); // Debug header
-      const response = await axios.get(`http://127.0.0.1:8000/posts/questions/${question.id}/answers/`, {
+      const response = await axios.get(`https://quora-clone-backend-one.vercel.app/posts/questions/${question.id}/answers/`, {
         headers: { Authorization: authHeader },
       });
       setAnswers(response.data);
@@ -45,7 +45,7 @@ const QuestionCard = ({ question, isLoggedIn }) => {
 
     try {
       const response = await axios.post(
-        'http://127.0.0.1:8000/posts/answers/',
+        'https://quora-clone-backend-one.vercel.app/posts/answers/',
         formData,
         {
           headers: {
@@ -75,7 +75,7 @@ const QuestionCard = ({ question, isLoggedIn }) => {
       const authHeader = `Bearer ${token ? token.trim() : ''}`;
       console.log('Like Authorization Header:', authHeader); // Debug header
       await axios.post(
-        `http://127.0.0.1:8000/posts/like-answer/${answerId}/like/`,
+        `https://quora-clone-backend-one.vercel.app/posts/like-answer/${answerId}/like/`,
         {},
         { headers: { Authorization: authHeader } }
       );
