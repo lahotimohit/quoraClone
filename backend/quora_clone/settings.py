@@ -72,15 +72,7 @@ WSGI_APPLICATION = 'quora_clone.wsgi.application'
 
 url = urlparse(DB_URL)
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
+DATABASES = {
         'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': url.path[1:],
