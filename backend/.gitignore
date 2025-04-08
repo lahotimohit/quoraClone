@@ -26,7 +26,6 @@ ENV/
 *.swp
 
 # Static and media files
-/staticfiles/
 /media/
 
 # Migrations

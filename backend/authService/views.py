@@ -18,7 +18,7 @@ class RequestPasswordResetView(APIView):
         try:
             user = User.objects.get(email=email)
             token = default_token_generator.make_token(user)
-            reset_link = f"http://127.0.0.1:3000/reset-password/{user.id}/{token}/"
+            reset_link = f"https://quora-clone-lahotimohit.netlify.app/reset-password/{user.id}/{token}/"
 
             send_mail(
                 "Password Reset Request",
