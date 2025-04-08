@@ -10,7 +10,7 @@ import random
 class UserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['first_name','last_name','email','phone','password']
+        fields = ['first_name','last_name', 'username','email','phone','password']
 
     def create(self, validated_data):
         user = User.objects.create(
@@ -18,6 +18,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             last_name=validated_data['last_name'],
             email=validated_data['email'],
             phone=validated_data['phone'],
+            username=validated_data['username'],
             password=validated_data['password'],
             isVerified=False
         )
@@ -80,7 +81,7 @@ class UserLoginSerializer(serializers.Serializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['first_name','last_name','email','phone', 'isVerified',]
+        fields = ['first_name','last_name','username','email','phone','isVerified',]
 
 
 class PasswordResetSerializer(serializers.Serializer):
